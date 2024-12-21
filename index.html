@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
@@ -24,10 +23,41 @@
             font-size: 2rem;
         }
         .container {
-            max-width: 800px;
+            display: flex;
+            flex-direction: row;
+            max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
+        }
+        .news-section {
+            flex: 1;
+            margin-right: 20px;
             background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .news-section h2 {
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .news-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+        .form-section {
+            flex: 2;
+            background: white;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -86,12 +116,15 @@
             margin: 8px 0 0;
             color: #555;
         }
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px;
-            background-color: #007bff;
-            color: white;
+        .captcha {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .captcha input {
+            width: auto;
+            display: inline-block;
+            max-width: 100px;
         }
     </style>
 </head>
@@ -100,67 +133,94 @@
         <h1>Submit Your Link</h1>
     </header>
     <div class="container">
-        <!-- Submission Form -->
-        <form action="https://formspree.io/f/mrbbzplq" method="POST">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" placeholder="Enter link title" required>
-            <label for="url">URL:</label>
-            <input type="url" id="url" name="url" placeholder="Enter link URL" required>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="5" placeholder="Enter a short description" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <!-- Real-time News Section -->
+        <div class="news-section" id="newsSection">
+            <h2>Latest News</h2>
+            <div class="news-item">
+                <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
+                <p>Global news from one of the most trusted sources.</p>
+            </div>
+            <div class="news-item">
+                <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
+                <p>Stay updated with the latest happenings worldwide.</p>
+            </div>
+            <div class="news-item">
+                <a href="https://www.reuters.com/" target="_blank">Reuters</a>
+                <p>Accurate, unbiased news from around the globe.</p>
+            </div>
+            <div class="news-item">
+                <a href="https://news.google.com" target="_blank">Google News</a>
+                <p>Discover news tailored to your interests.</p>
+            </div>
+            <div class="news-item">
+                <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
+                <p>Top stories and in-depth reporting from NYT.</p>
+            </div>
+        </div>
 
-        <!-- Display Submitted Links -->
-        <div id="linkList">
-            <h2>Submitted Links</h2>
-            <div id="linksContainer">
-                <!-- Links will be dynamically loaded here -->
+        <!-- Form Section -->
+        <div class="form-section">
+            <form action="https://formspree.io/f/mrbbzplq" method="POST" id="submitForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter link title" required>
+                <label for="url">URL:</label>
+                <input type="url" id="url" name="url" placeholder="Enter link URL" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" placeholder="Enter a short description" required></textarea>
+                <label for="keywords">Keywords:</label>
+                <input type="text" id="keywords" name="keywords" placeholder="Enter keywords" required>
+
+                <!-- Math CAPTCHA -->
+                <div class="captcha">
+                    <span id="captchaQuestion"></span>
+                    <input type="text" id="captchaAnswer" name="captchaAnswer" placeholder="Answer" required>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <!-- Display Submitted Links -->
+            <div id="linkList">
+                <h2>Submitted Links</h2>
+                <div id="linksContainer">
+                    <!-- Links will be dynamically loaded here -->
+                </div>
             </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2024 Submit Your Link. All Rights Reserved.</p>
-    </footer>
+
     <script>
-        // Fetch submitted links from a static JSON file
-        async function fetchLinks() {
-            try {
-                const response = await fetch('links.json'); // Replace with your actual JSON file path
-                if (!response.ok) {
-                    throw new Error('Failed to fetch links.');
-                }
-                const links = await response.json();
-                renderLinks(links);
-            } catch (error) {
-                console.error('Error loading links:', error);
-                document.getElementById('linksContainer').innerHTML = '<p>Failed to load links.</p>';
-            }
+        // Generate random math question
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10);
+            const num2 = Math.floor(Math.random() * 10);
+            const operation = Math.random() > 0.5 ? '+' : '-';
+            const question = `${num1} ${operation} ${num2}`;
+            const answer = operation === '+' ? num1 + num2 : num1 - num2;
+
+            // Store correct answer in a hidden input field
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.id = 'correctAnswer';
+            hiddenInput.value = answer;
+            document.getElementById('submitForm').appendChild(hiddenInput);
+
+            // Display the question
+            document.getElementById('captchaQuestion').textContent = `What is ${question}?`;
         }
 
-        // Render links into the container
-        function renderLinks(links) {
-            const container = document.getElementById('linksContainer');
-            container.innerHTML = ''; // Clear previous content
-
-            if (links.length === 0) {
-                container.innerHTML = '<p>No links have been submitted yet.</p>';
-                return;
+        // Validate CAPTCHA answer
+        document.getElementById('submitForm').addEventListener('submit', function(e) {
+            const userAnswer = parseInt(document.getElementById('captchaAnswer').value);
+            const correctAnswer = parseInt(document.getElementById('correctAnswer').value);
+            if (userAnswer !== correctAnswer) {
+                e.preventDefault();
+                alert('Incorrect CAPTCHA answer!');
             }
+        });
 
-            links.forEach(link => {
-                const linkItem = document.createElement('div');
-                linkItem.className = 'link-item';
-                linkItem.innerHTML = `
-                    <a href="${link.url}" target="_blank">${link.title}</a>
-                    <p>${link.description}</p>
-                `;
-                container.appendChild(linkItem);
-            });
-        }
-
-        // Load links on page load
-        document.addEventListener('DOMContentLoaded', fetchLinks);
+        // Load CAPTCHA question on page load
+        document.addEventListener('DOMContentLoaded', generateCaptcha);
     </script>
 </body>
 </html>
