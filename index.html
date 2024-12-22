@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Your Link</title>
-    <style>
+   <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -29,9 +29,31 @@
             margin: 30px auto;
             padding: 20px;
         }
-        .news-section {
+        .left-section {
             flex: 1;
             margin-right: 20px;
+        }
+        .ad-section {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .ad-section h2 {
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .ad-images {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .ad-images img {
+            width: 48%;
+            height: auto;
+        }
+        .news-section {
             background: white;
             padding: 15px;
             border-radius: 8px;
@@ -131,15 +153,6 @@
         footer a:hover {
             text-decoration: none;
         }
-        .ad-images {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .ad-images img {
-            width: 48%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
@@ -147,33 +160,41 @@
         <h1>Submit Your Link</h1>
     </header>
     <div class="container">
-        <!-- News Section -->
-        <div class="news-section">
-            <h2>Latest News</h2>
-            <div class="ad-images">
-                <!-- Advertisement Images -->
-                <img src="https://cdn.shopify.com/s/files/1/0914/5230/9794/files/dry_ice_blasting_machine_AI30_1_png.jpg" alt="Dry Ice Blasting Machine AI30">
-                <img src="https://cdn.shopify.com/s/files/1/0914/5230/9794/files/dry_ice_blasting_machine_AI30_1_png.jpg" alt="Dry Ice Blasting Machine AI30">
+         <!-- Left Section -->
+        <div class="left-section">
+            <!-- Advertisement Section -->
+            <div class="ad-section">
+                <h2>Featured Products</h2>
+                <div class="ad-images">
+                    <!-- Advertisement Images -->
+                    <img src="https://cdn.shopify.com/s/files/1/0914/5230/9794/files/dry_ice_blasting_machine_AI30_1_png.jpg" alt="Dry Ice Blasting Machine AI30">
+                    <img src="https://cdn.shopify.com/s/files/1/0914/5230/9794/files/dry_ice_blasting_machine_AI30_1_png.jpg" alt="Dry Ice Blasting Machine AI30">
+                </div>
             </div>
-            <div class="news-item">
-                <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
-                <p>Global news from one of the most trusted sources.</p>
-            </div>
-            <div class="news-item">
-                <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
-                <p>Stay updated with the latest happenings worldwide.</p>
-            </div>
-            <div class="news-item">
-                <a href="https://www.reuters.com/" target="_blank">Reuters</a>
-                <p>Accurate, unbiased news from around the globe.</p>
-            </div>
-            <div class="news-item">
-                <a href="https://news.google.com" target="_blank">Google News</a>
-                <p>Discover news tailored to your interests.</p>
-            </div>
-            <div class="news-item">
-                <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
-                <p>Top stories and in-depth reporting from NYT.</p>
+
+            <!-- Latest News Section -->
+            <div class="news-section">
+                <h2>Latest News</h2>
+                <div class="news-item">
+                    <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
+                    <p>Global news from one of the most trusted sources.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
+                    <p>Stay updated with the latest happenings worldwide.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.reuters.com/" target="_blank">Reuters</a>
+                    <p>Accurate, unbiased news from around the globe.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://news.google.com" target="_blank">Google News</a>
+                    <p>Discover news tailored to your interests.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
+                    <p>Top stories and in-depth reporting from NYT.</p>
+                </div>
             </div>
         </div>
 
