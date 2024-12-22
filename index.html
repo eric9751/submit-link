@@ -34,26 +34,6 @@
             flex: 1;
             margin-right: 20px;
         }
-        .ad-section {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        .ad-section h2 {
-            margin-bottom: 15px;
-            color: #007bff;
-        }
-        .ad-images {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .ad-images img {
-            width: 48%;
-            height: auto;
-        }
         .news-section {
             background: white;
             padding: 15px;
@@ -155,6 +135,26 @@
         footer a:hover {
             text-decoration: none;
         }
+.image-section {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.image-section h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
     </style>
 </head>
 <body>
@@ -163,42 +163,40 @@
     </header>
     <div class="container">
          <!-- Left Section -->
-        <div class="left-section">
-            <!-- Advertisement Section -->
-            <div class="ad-section">
-                <h2>Featured Products</h2>
-                <div class="news-item">
-                    <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
-                    <p>Global news from one of the most trusted sources.</p>
-                </div>
-            </div>
-
-            <!-- Hot Link -->
-            <div class="news-section">
-                <h2>Hot Links</h2>
-                <div class="news-item">
-                    <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
-                    <p>Global news from one of the most trusted sources.</p>
-                </div>
-                <div class="news-item">
-                    <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
-                    <p>Stay updated with the latest happenings worldwide.</p>
-                </div>
-                <div class="news-item">
-                    <a href="https://www.reuters.com/" target="_blank">Reuters</a>
-                    <p>Accurate, unbiased news from around the globe.</p>
-                </div>
-                <div class="news-item">
-                    <a href="https://news.google.com" target="_blank">Google News</a>
-                    <p>Discover news tailored to your interests.</p>
-                </div>
-                <div class="news-item">
-                    <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
-                    <p>Top stories and in-depth reporting from NYT.</p>
-                </div>            
-           </div>
+<div class="left-section">
+    <!-- Hot Link -->
+    <div class="news-section">
+        <h2>Hot Links</h2>
+        <div class="news-item">
+            <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
+            <p>Global news from one of the most trusted sources.</p>
         </div>
+        <div class="news-item">
+            <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
+            <p>Stay updated with the latest happenings worldwide.</p>
+        </div>
+        <div class="news-item">
+            <a href="https://www.reuters.com/" target="_blank">Reuters</a>
+            <p>Accurate, unbiased news from around the globe.</p>
+        </div>
+        <div class="news-item">
+            <a href="https://news.google.com" target="_blank">Google News</a>
+            <p>Discover news tailored to your interests.</p>
+        </div>
+        <div class="news-item">
+            <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
+            <p>Top stories and in-depth reporting from NYT.</p>
+        </div>            
+    </div>
 
+    <!-- Single Image Section -->
+    <div class="image-section">
+        <h2>Featured Image</h2>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/200" alt="Featured Image">
+        </div>
+    </div>
+</div>
         <!-- Form Section -->
         <div class="form-section">
             <form id="myForm" action="https://formspree.io/f/mrbbzplq" method="POST">
