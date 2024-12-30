@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="canonical" href="https://submityourlink.site">
+    <link rel="canonical" href="https://submityourlink.site">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 添加viewport标签 -->
     <meta name="description" content="SubmitYourLink.site is a platform to share, discover, and promote websites. Add your favorite links and explore new resources.">
     <meta name="keywords" content="Submit Links, Backlinks, Website Sharing, Link Submission">    
     <title>Submit Your Link - Share Your Websites &amp Discover New Ones</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-   <style>
+    <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -18,7 +19,7 @@
         header {
             background-color: #336077;
             color: white;
-            padding: 0px 0;
+            padding: 10px 0;
             text-align: center;
         }
         header h1 {
@@ -65,9 +66,10 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding-left: 30px;  /* Add extra space on the left */
-            padding-right: 50px; /* Add extra space on the right */
-        }        form {
+            padding-left: 30px;
+            padding-right: 50px;
+        }
+        form {
             display: flex;
             flex-direction: column;
         }
@@ -137,122 +139,153 @@
         footer a:hover {
             text-decoration: none;
         }
-.image-section {
-    background: white;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.image-section h2 {
-    margin-bottom: 10px;
-    color: #336077;
-}
-.image-container img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-}
- body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+        .image-section {
+            background: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        /* Banner Image Styling */
+        .image-section h2 {
+            margin-bottom: 10px;
+            color: #336077;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+        }
         .banner-img {
             width: 100%;
             height: auto;
             display: block;
         }
 
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .left-section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .form-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .news-section h2, .image-section h2, #linkList h2 {
+                font-size: 1.3rem;
+            }
+            .news-item a, .link-item a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            .news-section h2, .image-section h2, #linkList h2 {
+                font-size: 1.1rem;
+            }
+            .news-item a, .link-item a {
+                font-size: 0.9rem;
+            }
+            input, textarea, button {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>      
-     <!-- Banner Image Section -->
-    <div>
-        <img src="/submit.jpg" alt="submityourlink" class="banner-img">
-    </div>
- <h1>Submit Your Link.Site</h1>
+        <!-- Banner Image Section -->
+        <div>
+            <img src="/submit.jpg" alt="submityourlink" class="banner-img">
+        </div>
+        <h1>Submit Your Link.Site</h1>
     </header>
     <div class="container">
-         <!-- Left Section -->
-<div class="left-section">
-    <!-- Hot Link -->
-    <div class="news-section">
-        <h2>Hot News</h2>
-        <div class="news-item">
-            <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
-            <p>Global news from one of the most trusted sources.</p>
-        </div>
-        <div class="news-item">
-            <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
-            <p>Stay updated with the latest happenings worldwide.</p>
-        </div>
-        <div class="news-item">
-            <a href="https://www.reuters.com/" target="_blank">Reuters</a>
-            <p>Accurate, unbiased news from around the globe.</p>
-        </div>
-        <div class="news-item">
-            <a href="https://news.google.com" target="_blank">Google News</a>
-            <p>Discover news tailored to your interests.</p>
-        </div>
-        <div class="news-item">
-            <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
-            <p>Top stories and in-depth reporting from NYT.</p>
-        </div>
-        <div class="news-item">
-            <a href="https://www.theguardian.com/international" target="_blank">The Guardian</a>
-            <p>Independent journalism from the UK and beyond.</p>
-        </div>
-        <div class="news-item">
-            <a href="https://www.aljazeera.com/" target="_blank">Al Jazeera</a>
-            <p>Comprehensive news coverage from the Middle East and around the world.</p>
-        </div>
-        <div class="news-item">
-    <a href="https://www.npr.org/" target="_blank">NPR</a>
-    <p>Trusted stories and in-depth analysis from NPR.</p>
-       </div>
-       <div class="news-item">
-    <a href="https://www.bloomberg.com/" target="_blank">Bloomberg</a>
-    <p>Business, market news, and financial insights.</p>
-      </div>
-      <div class="news-item">
-    <a href="https://www.economist.com/" target="_blank">The Economist</a>
-    <p>Global analysis and commentary on current events.</p>
-      </div>
-     <div class="news-item">
-    <a href="https://www.apnews.com/" target="_blank">Associated Press (AP)</a>
-    <p>Breaking news and reliable information from AP.</p>
-     </div>
-     <div class="news-item">
-    <a href="https://www.ft.com/" target="_blank">Financial Times</a>
-    <p>News and analysis focused on global business and markets.</p>
-     </div>
-     <div class="news-item">
-    <a href="https://www.vox.com/" target="_blank">Vox</a>
-    <p>Explanatory journalism to help you understand the world.</p>
-     </div>
-     <div class="news-item">
-    <a href="https://www.time.com/" target="_blank">TIME</a>
-    <p>Comprehensive coverage of the people and events shaping the world.</p>
- </div>            
-    </div>
+        <!-- Left Section -->
+        <div class="left-section">
+            <!-- Hot Link -->
+            <div class="news-section">
+                <h2>Hot News</h2>
+                <div class="news-item">
+                    <a href="https://www.bbc.com/news" target="_blank">BBC News</a>
+                    <p>Global news from one of the most trusted sources.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.cnn.com" target="_blank">CNN - Breaking News</a>
+                    <p>Stay updated with the latest happenings worldwide.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.reuters.com/" target="_blank">Reuters</a>
+                    <p>Accurate, unbiased news from around the globe.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://news.google.com" target="_blank">Google News</a>
+                    <p>Discover news tailored to your interests.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.nytimes.com" target="_blank">The New York Times</a>
+                    <p>Top stories and in-depth reporting from NYT.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.theguardian.com/international" target="_blank">The Guardian</a>
+                    <p>Independent journalism from the UK and beyond.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.aljazeera.com/" target="_blank">Al Jazeera</a>
+                    <p>Comprehensive news coverage from the Middle East and around the world.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.npr.org/" target="_blank">NPR</a>
+                    <p>Trusted stories and in-depth analysis from NPR.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.bloomberg.com/" target="_blank">Bloomberg</a>
+                    <p>Business, market news, and financial insights.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.economist.com/" target="_blank">The Economist</a>
+                    <p>Global analysis and commentary on current events.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.apnews.com/" target="_blank">Associated Press (AP)</a>
+                    <p>Breaking news and reliable information from AP.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.ft.com/" target="_blank">Financial Times</a>
+                    <p>News and analysis focused on global business and markets.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.vox.com/" target="_blank">Vox</a>
+                    <p>Explanatory journalism to help you understand the world.</p>
+                </div>
+                <div class="news-item">
+                    <a href="https://www.time.com/" target="_blank">TIME</a>
+                    <p>Comprehensive coverage of the people and events shaping the world.</p>
+                </div>            
+            </div>
 
-    <!-- Single Image Section -->
-    <div class="image-section">
-        <h2>Featured Products</h2>
-        <div class="image-container">
-            <img src="/dry-ice-blasting-machine.png" alt="Dry ice blating machine">
+            <!-- Single Image Section -->
+            <div class="image-section">
+                <h2>Featured Products</h2>
+                <div class="image-container">
+                    <img src="/dry-ice-blasting-machine.png" alt="Dry ice blating machine">
+                </div>
+            </div>
         </div>
-    </div>
-</div>
         <!-- Form Section -->
         <div class="form-section">
             <form id="myForm" action="https://formspree.io/f/mrbbzplq" method="POST">
@@ -331,4 +364,4 @@
         <a href="https://www.submityourlink.site" target="https://www.submityourlink.site">Home page</a> |  
         <a href="https://www.submityourlink.site/sitemap.xml" target="https://www.submityourlink.site/sitemap.xml">Sitemap</a>
     </footer>
-</html> 
+</html>
